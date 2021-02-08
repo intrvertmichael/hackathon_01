@@ -1,35 +1,82 @@
 
-.code-editor, textarea, .textarea-output {
-    height: 500px;
-}
-
 .code-editor {
-    border: 5px solid blue;
     position: relative;
     width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    overflow: hidden;
+
+    margin: 30px;
+}
+
+
+.input-wrapper, .output-wrapper {
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+}
+
+.output-wrapper {
+    background: black;
+    color: rgb(60, 255, 60);
+    font-size: 14px;
+    padding-bottom: 50px !important;
+    border-top: 0.1px solid rgb(60, 255, 60);
+}
+
+.output-wrapper button {
+    color: rgb(60, 255, 60);
+    border: 1px solid rgb(60, 255, 60);
+    bottom: 0px;
+}
+
+.output-wrapper button, .submit-code  {
+    right: 0px;
+    background: none;
+    border-radius: 5px;
+    position: absolute;
+
+    margin: 10px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+    font-family: Menlo;
+    font-size: 12px;
+    cursor: pointer;
 }
 
 .textarea-output, textarea {
+    background: none;
+    border: none;
+    height: 250px;
+    font-size: 20px;
+    padding-top: 50px !important;
+}
+
+.textarea-output, textarea, .output-wrapper {
     margin: 0px;
-    padding: 10px;
+    padding: 30px;
     box-sizing: border-box;
 
     font-family: menlo;
-    font-size: 20px;
     text-align: left;
     word-break: break-all;
 
     width: 100%;
-
-    border: none;
-    background: none;
 }
 
 textarea {
     color: transparent;
-    caret-color: red;
+    caret-color:white;
     resize: none;
     outline: none;
+}
+
+textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(93 120 179);
+    opacity: 1; /* Firefox */
 }
 
 .textarea-output {
@@ -37,4 +84,13 @@ textarea {
     top: 0px;
     left: 0px;
     z-index: -1;
+
+    background: #000819;
+    color: #5d78b3;
+}
+
+.submit-code {
+    top: 0px;
+    border: 1px solid #5d78b3;
+    color: #5d78b3;
 }

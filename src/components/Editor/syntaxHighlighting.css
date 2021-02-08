@@ -1,17 +1,18 @@
+
 .variable {
-    color: red;
+    color: #9bd5d8;
 }
 
 .function {
-    color: blue;
+    color: white;
 }
 
 .statement {
-    color: pink
+    color: #d49cc7;
 }
 
 .string {
-    color: green;
+    color: #9de29d;
 }
 
 .number {
@@ -19,9 +20,5 @@
 }
 
 .array {
-    color: lightblue;
-}
-
-.equals {
-    color: purple;
+    color: #ffe8a6;
 }
