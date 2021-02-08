@@ -1,0 +1,40 @@
+
+.code-editor, textarea, .textarea-output {
+    height: 500px;
+}
+
+.code-editor {
+    border: 5px solid blue;
+    position: relative;
+    width: 50%;
+}
+
+.textarea-output, textarea {
+    margin: 0px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    font-family: menlo;
+    font-size: 20px;
+    text-align: left;
+    word-break: break-all;
+
+    width: 100%;
+
+    border: none;
+    background: none;
+}
+
+textarea {
+    color: transparent;
+    caret-color: red;
+    resize: none;
+    outline: none;
+}
+
+.textarea-output {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+}

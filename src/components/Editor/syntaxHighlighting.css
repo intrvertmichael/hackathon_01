@@ -1,0 +1,27 @@
+.variable {
+    color: red;
+}
+
+.function {
+    color: blue;
+}
+
+.statement {
+    color: pink
+}
+
+.string {
+    color: green;
+}
+
+.number {
+    color: orange;
+}
+
+.array {
+    color: lightblue;
+}
+
+.equals {
+    color: purple;
+}
