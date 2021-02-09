@@ -7,6 +7,8 @@
     color: #52351b !important;
     min-width: 600px;
     max-width: 600px;
+    display: flex;
+    flex-direction: column;
 }
 
 .path-wrapper {
@@ -47,6 +49,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin-top: 10px;
+    margin-bottom: 20px;
 }
 
 .path-label {

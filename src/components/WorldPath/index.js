@@ -16,22 +16,31 @@ const WorldPath = props => {
         onPathWidth = { width:"0%" }
         offPathWidth = { width:"100%" }
         characterPos = { left:"calc(0% - 40px)" }
+
     } else if( currentLevel === 2 ){
         onPathWidth = { width:"25%" }
         offPathWidth = { width:"75%" }
         characterPos = { left:"calc(25% - 40px)" }
+
     } else if( currentLevel === 3 ){
         onPathWidth = { width:"50%" }
         offPathWidth = { width:"50%" }
         characterPos = { left:"calc(50% - 50px)" }
+
     } else if( currentLevel === 4 ){
         onPathWidth = { width:"75%" }
         offPathWidth = { width:"25%" }
         characterPos = { left:"calc(75% - 50px)" }
+
     } else if( currentLevel === 5 ){
         onPathWidth = { width:"100%" }
         offPathWidth = { width:"0%" }
         characterPos = { left:"calc(100% - 60px)" }
+
+    }
+
+    const handlePathButton = () => {
+        console.log("handle path button pressed")
     }
 
     return (
@@ -44,7 +53,6 @@ const WorldPath = props => {
                     className="player nes-octocat animate"
                     style={characterPos}
                 />
-
             </div>
 
             <div className='path-wrapper'>
@@ -75,6 +83,11 @@ const WorldPath = props => {
                 <div className='path-label'> Functions </div>
                 <div className='path-label'> Final </div>
             </div>
+
+            <button
+                className={'nes-btn is-success'}
+                onClick={handlePathButton}
+            > LET'S DO IT ! </button>
 
         </div>
     )
