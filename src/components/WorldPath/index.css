@@ -1,6 +1,7 @@
 
 .world-path {
     padding: 40px;
+    padding-top: 50px;
     box-sizing: border-box;
     background: #DAC8AC !important;
     color: #52351b !important;
@@ -77,6 +78,7 @@
 }
 
 .player {
-    width: 50px;
+    position: absolute;
+    top: -30px;
     left: 0px;
 }
