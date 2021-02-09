@@ -20,7 +20,7 @@ const Editor = props => {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // prop defaults
     const wordLimit = 200
-    const correctAnswer = "another answer"
+    const correctAnswer = "hello world"
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -95,7 +95,7 @@ const Editor = props => {
 
                     {
                         submitted === correctAnswer ?
-                        <button onClick={handleNextLevelClick}> next level </button>
+                        <button className={"nes-btn is-success"} onClick={handleNextLevelClick}> next level </button>
                         :
                         ""
                     }
