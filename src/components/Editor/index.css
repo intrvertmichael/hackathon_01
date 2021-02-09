@@ -1,13 +1,11 @@
 
 .code-editor {
     position: relative;
-    width: 50%;
+    width: 100%;
 
     display: flex;
     flex-direction: column;
     overflow: hidden;
-
-    margin: 30px;
 }
 
 
@@ -21,8 +19,10 @@
     background: black;
     color: rgb(60, 255, 60);
     font-size: 14px;
+    line-height: 25px;
     padding-bottom: 50px !important;
-    border-top: 0.1px solid rgb(60, 255, 60);
+    border-top: 2px solid rgb(60, 255, 60);
+    height: 150px;
 }
 
 .output-wrapper button {
@@ -48,6 +48,7 @@
     color: #5d78b3;
     background: none;
     border-radius: 5px;
+    z-index: 2;
 }
 
 .submit-code:hover {
@@ -56,11 +57,11 @@
 }
 
 .textarea-output, textarea {
-    height: 200px;
+    height: 300px;
     background: none;
     border: none;
-    font-size: 13px;
-    line-height: 20px;
+    font-size: 18px;
+    line-height: 30px;
     padding-top: 50px !important;
 }
 
@@ -81,6 +82,7 @@ textarea {
     caret-color:white;
     resize: none;
     outline: none;
+    z-index: 1;
 }
 
 textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -92,7 +94,6 @@ textarea::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     position: absolute;
     top: 0px;
     left: 0px;
-    z-index: -1;
 
     background: #000819;
     color: #5d78b3;

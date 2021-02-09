@@ -20,7 +20,7 @@ const Editor = props => {
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     // prop defaults
     const wordLimit = 200
-    const correctAnswer = "hello world"
+    const correctAnswer = "test"
 
     // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
@@ -30,6 +30,12 @@ const Editor = props => {
 
     const handleNextLevelClick = () => {
         console.log("next level clicked")
+    }
+
+    let answerIsCorrect = null
+
+    if(submitted){
+        answerIsCorrect = submitted === correctAnswer
     }
 
     return (
@@ -73,7 +79,9 @@ const Editor = props => {
 
                         try {
                             // eslint-disable-next-line no-eval
+                            console.log(inputValue)
                             result = global.eval(inputValue)
+                            console.log(result)
                         }
                         catch(error) {
                             console.log(error)
@@ -89,19 +97,26 @@ const Editor = props => {
             </div>
 
             {
-                submitted?
                 <div className="output-wrapper">
-                    {submitted}
-
-                    {
-                        submitted === correctAnswer ?
+                {
+                    answerIsCorrect ?
+                    <>
+                        That is correct ! <br/>
                         <button className={"nes-btn is-success"} onClick={handleNextLevelClick}> next level </button>
-                        :
-                        ""
-                    }
+                    </>
+                    :
+                    ""
+                }
+
+                {
+                    answerIsCorrect === false?
+                    <>
+                        Please try again <br/>
+                    </>
+                    :
+                    ""
+                }
                 </div>
-                :
-                ""
             }
 
         </div>

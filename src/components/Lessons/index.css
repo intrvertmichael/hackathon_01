@@ -1,0 +1,22 @@
+
+.lessons {
+    background: white;
+    min-width: 600px;
+    max-width: 95%;
+    max-height: 95%;
+    overflow: scroll;
+    padding: 0px;
+}
+
+.lessons h1 {
+    padding: 30px;
+}
+
+.lessons img {
+    max-width: 100%;
+    padding: 30px 0px;
+}
+
+.lessons p {
+    padding: 30px;
+}

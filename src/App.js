@@ -2,6 +2,7 @@
 import './App.css';
 import Editor from './components/Editor';
 import Home from './components/Home';
+import Lessons from './components/Lessons';
 import WorldPath from './components/WorldPath'
 
 function App() {
@@ -9,7 +10,8 @@ function App() {
     <div className="App">
       {/* <Editor /> */}
       {/* <Home /> */}
-      <WorldPath />
+      {/* <WorldPath /> */}
+      <Lessons />
     </div>
   );
 }
