@@ -1,36 +1,40 @@
-import Editor from '../Editor'
 import './index.css'
 
-const Lessons = props => {
+import Lesson1 from './All/Lesson_1'
+import Lesson2 from './All/Lesson_2'
+import Lesson3 from './All/Lesson_3'
+import Lesson4 from './All/Lesson_4'
+import Lesson5 from './All/Lesson_5'
+
+const Lessons = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
     return (
         <div className={'lessons nes-container'}>
-            <h1>
-                lessons
-            </h1>
 
-            <p>
-                This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this.
-            </p>
-
-            <img src='https://media.giphy.com/media/NKEt9elQ5cR68/giphy.gif' alt='gif' />
-
-            <p>
-                This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this.
-            </p>
-
-            <img src='https://media.giphy.com/media/NKEt9elQ5cR68/giphy.gif' alt='gif' />
-
-            <p>
-                This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this.
-            </p>
-
-            <img src='https://media.giphy.com/media/NKEt9elQ5cR68/giphy.gif' alt='gif' />
-
-            <p>
-                This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this. This is a lesson it would go something like this.
-            </p>
-
-            <Editor />
+            {
+                currentLevel === 1?
+                <Lesson1 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                : ''
+            }
+            {
+                currentLevel === 2?
+                <Lesson2 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                : ''
+            }
+            {
+                currentLevel === 3?
+                <Lesson3 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                : ''
+            }
+            {
+                currentLevel === 4?
+                <Lesson4 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                : ''
+            }
+            {
+                currentLevel === 5?
+                <Lesson5 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                : ''
+            }
 
         </div>
     )

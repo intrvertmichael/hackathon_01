@@ -4,7 +4,7 @@ import './syntaxHighlighting.css'
 
 import regexReplacements from './regexReplacements'
 
-const Editor = props => {
+const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
     const [inputValue, setInputValue] = useState()
     const [outputValue, setOutputValue] = useState()
     const [submitted, setSubmitted] = useState()
@@ -26,10 +26,6 @@ const Editor = props => {
 
     const createMarkup = () => {
         return {__html: outputValue};
-    }
-
-    const handleNextLevelClick = () => {
-        console.log("next level clicked")
     }
 
     let answerIsCorrect = null
@@ -79,9 +75,7 @@ const Editor = props => {
 
                         try {
                             // eslint-disable-next-line no-eval
-                            console.log(inputValue)
                             result = global.eval(inputValue)
-                            console.log(result)
                         }
                         catch(error) {
                             console.log(error)
@@ -102,7 +96,21 @@ const Editor = props => {
                     answerIsCorrect ?
                     <>
                         That is correct ! <br/>
-                        <button className={"nes-btn is-success"} onClick={handleNextLevelClick}> next level </button>
+                        {
+                            currentLevel === 5?
+                            <button
+                            className={"nes-btn is-success"}
+                            onClick={ () => setCurrentPage(3) }
+                            > all done ! </button>
+                            :
+                            <button
+                            className={"nes-btn is-success"}
+                            onClick={ () => {
+                                setCurrentLevel(currentLevel + 1)
+                                setCurrentPage(1)
+                            } }
+                            > next level </button>
+                        }
                     </>
                     :
                     ""

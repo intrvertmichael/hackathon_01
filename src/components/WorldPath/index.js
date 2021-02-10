@@ -1,9 +1,7 @@
 import './index.css'
 import Castle from './castle.png'
 
-const WorldPath = props => {
-
-    const currentLevel = 2
+const WorldPath = ({setCurrentPage, currentLevel}) => {
 
     const onStyle = { background: '#BAA482' }
     const offStyle = { background: '#D69760' }
@@ -15,7 +13,7 @@ const WorldPath = props => {
     if( currentLevel === 1 ){
         onPathWidth = { width:"0%" }
         offPathWidth = { width:"100%" }
-        characterPos = { left:"calc(0% - 40px)" }
+        characterPos = { left:"calc(0% - 30px)" }
 
     } else if( currentLevel === 2 ){
         onPathWidth = { width:"25%" }
@@ -37,10 +35,6 @@ const WorldPath = props => {
         offPathWidth = { width:"0%" }
         characterPos = { left:"calc(100% - 60px)" }
 
-    }
-
-    const handlePathButton = () => {
-        console.log("handle path button pressed")
     }
 
     return (
@@ -86,7 +80,7 @@ const WorldPath = props => {
 
             <button
                 className={'nes-btn is-success'}
-                onClick={handlePathButton}
+                onClick={ () => setCurrentPage(2) }
             > LET'S DO IT ! </button>
 
         </div>

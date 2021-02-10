@@ -1,0 +1,13 @@
+
+.end {
+    padding: 50px;
+    width: 90%;
+    max-width: 600px;
+    font-size: 14px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.end h1 {
+    margin-bottom: 50px;
+}

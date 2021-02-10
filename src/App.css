@@ -10,10 +10,13 @@ html, body, #root, .App {
 body {
   font-family: "Press Start 2P";
   background: #9BE6E6;
+  background-image: url("./clouds.png");
+  background-size: 250px;
 }
 
 .App {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
