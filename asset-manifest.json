@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hackathon_01/static/css/main.a3454085.chunk.css",
-    "main.js": "/hackathon_01/static/js/main.e05bce54.chunk.js",
-    "main.js.map": "/hackathon_01/static/js/main.e05bce54.chunk.js.map",
+    "main.js": "/hackathon_01/static/js/main.be95ce50.chunk.js",
+    "main.js.map": "/hackathon_01/static/js/main.be95ce50.chunk.js.map",
     "runtime-main.js": "/hackathon_01/static/js/runtime-main.13480ecd.js",
     "runtime-main.js.map": "/hackathon_01/static/js/runtime-main.13480ecd.js.map",
     "static/js/2.73b33a1d.chunk.js": "/hackathon_01/static/js/2.73b33a1d.chunk.js",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.13480ecd.js",
     "static/js/2.73b33a1d.chunk.js",
     "static/css/main.a3454085.chunk.css",
-    "static/js/main.e05bce54.chunk.js"
+    "static/js/main.be95ce50.chunk.js"
   ]
 }
