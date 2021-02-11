@@ -11,6 +11,8 @@ function App() {
   const [currentPage, setCurrentPage] = useState(0) // 0 - 2
   const [currentLevel, setCurrentLevel] = useState(1) // 1 - 5
 
+  const [userName, setUserName] = useState() // users name
+
   return (
     <div className="App">
       {
@@ -34,13 +36,15 @@ function App() {
           setCurrentPage={setCurrentPage}
           setCurrentLevel={setCurrentLevel}
           currentLevel={currentLevel}
+          userName={userName}
+          setUserName={setUserName}
         />
         : ''
       }
 
       {
         currentPage === 3 ?
-        <End />
+        <End userName={userName} />
         : ''
       }
 

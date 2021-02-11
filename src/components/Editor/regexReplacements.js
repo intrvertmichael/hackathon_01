@@ -57,6 +57,16 @@ const regexReplacements = () => {
             code: '<span class="statement">return</span>'
         },
         {
+            name: "boolean-true",
+            regex: /true/gi,
+            code: '<span class="boolean">true</span>'
+        },
+        {
+            name: "boolean-false",
+            regex: /false/gi,
+            code: '<span class="boolean">false</span>'
+        },
+        {
             name: "function-arrow",
             regex: /=>/gi,
             code: '<span class="function">=></span>'

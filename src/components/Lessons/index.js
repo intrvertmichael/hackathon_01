@@ -6,33 +6,36 @@ import Lesson3 from './All/Lesson_3'
 import Lesson4 from './All/Lesson_4'
 import Lesson5 from './All/Lesson_5'
 
-const Lessons = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
+const Lessons = props => {
+
+    const {currentLevel} = props
+
     return (
         <div className={'lessons nes-container'}>
 
             {
                 currentLevel === 1?
-                <Lesson1 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                <Lesson1 {...props} />
                 : ''
             }
             {
                 currentLevel === 2?
-                <Lesson2 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                <Lesson2 {...props} />
                 : ''
             }
             {
                 currentLevel === 3?
-                <Lesson3 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                <Lesson3 {...props} />
                 : ''
             }
             {
                 currentLevel === 4?
-                <Lesson4 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                <Lesson4 {...props} />
                 : ''
             }
             {
                 currentLevel === 5?
-                <Lesson5 {...{setCurrentPage, setCurrentLevel, currentLevel}} />
+                <Lesson5 {...props} />
                 : ''
             }
 

@@ -1,37 +1,38 @@
+
 import {useEffect, useRef, useState} from 'react'
 import './index.css'
 import './syntaxHighlighting.css'
 
-import regexReplacements from './regexReplacements'
+import handleRegex from './handleRegex'
 
-const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
+const Editor = ({currentLevel, setCurrentLevel, setCurrentPage, wordLimit, checkAnswer}) => {
+
     const [inputValue, setInputValue] = useState()
     const [outputValue, setOutputValue] = useState()
-    const [submitted, setSubmitted] = useState()
     const [caretPos, setCaretPos] = useState()
+    const [answerIsCorrect, setAnswerIsCorrect] = useState()
     const textInput = useRef(null);
 
+    // setting the position of the caret
     useEffect( () => {
         const pos = caretPos + 3
         textInput.current.setSelectionRange(pos,pos)
     }, [textInput, caretPos])
 
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-    // prop defaults
-    const wordLimit = 200
-    const correctAnswer = "test"
-
-    // - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
+    // creating HTML in output
     const createMarkup = () => {
-        return {__html: outputValue};
+        if(outputValue){
+            return {__html: outputValue}
+        } else {
+            return {__html: 'Enter code here'}
+        }
     }
 
-    let answerIsCorrect = null
-
-    if(submitted){
-        answerIsCorrect = submitted === correctAnswer
+    // checking if submitted code is correct
+    const handleCodeSubmit = e => {
+        var objDiv = document.querySelector(".lessons");
+        objDiv.scrollTop = objDiv.scrollHeight;
+        setAnswerIsCorrect( checkAnswer(inputValue) )
     }
 
     return (
@@ -44,7 +45,6 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
                     autoCapitalize="none"
                     spellCheck="false"
                     maxLength={wordLimit}
-                    placeholder="Enter code here"
                     onChange={ e => setInputValue(e.target.value)}
                     onKeyDown={ e => {
                         if(e.keyCode === 9 || e.key === "Tab"){
@@ -69,33 +69,19 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
 
                 <button
                     className='submit-code'
-                    onClick = { e => {
-
-                        let result
-
-                        try {
-                            // eslint-disable-next-line no-eval
-                            result = global.eval(inputValue)
-                        }
-                        catch(error) {
-                            console.log(error)
-                        }
-
-                        if(result){
-                            setSubmitted( result )
-                        } else {
-                            setSubmitted("Please try again")
-                        }
-                    }}
+                    onClick={handleCodeSubmit}
                 > submit </button>
+
             </div>
 
             {
                 <div className="output-wrapper">
+
                 {
-                    answerIsCorrect ?
+                    answerIsCorrect === true ?
                     <>
-                        That is correct ! <br/>
+                        <> That is correct ! </>
+
                         {
                             currentLevel === 5?
                             <button
@@ -111,6 +97,7 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
                             } }
                             > next level </button>
                         }
+
                     </>
                     :
                     ""
@@ -118,66 +105,21 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage}) => {
 
                 {
                     answerIsCorrect === false?
-                    <>
-                        Please try again <br/>
-                    </>
+                    <> Please try again </>
                     :
                     ""
                 }
+
                 </div>
             }
 
         </div>
 )}
 
+// highglighting the input text
 const highlight = (e, setOutputValue) => {
-
-    let allText = e.target.value
-
-    const replacements = regexReplacements()
-
-    replacements.forEach( rep => {
-
-        if(rep.multiple){
-
-          // some regex matches return an array
-          // need to replace each match individually
-
-            const arr = allText.match(rep.regex)
-            const isArray = arr && arr.length > 0
-
-            if( (rep.name === "array" || rep.name === "function") && isArray){
-
-                // when trying to highlight array or function
-                // wrapper symbols need to be escaped
-
-                arr.forEach( found => {
-                    const strippedWord = found.substring(1, found.length - 1)
-                    const formattedRegex = '\\' + rep.code[0] + strippedWord + '\\' + rep.code[1]
-
-                    const createRegex = new RegExp( formattedRegex , 'g')
-                    const createNewElem = `<span class=${rep.name}>${found}</span>`
-
-                    allText = allText.replace(createRegex , createNewElem)
-                })
-
-            } else if(isArray){
-                arr.forEach( found => {
-                    const regex = new RegExp(`${found}`, 'g')
-                    const newElem = `<span class=${rep.code}>${found}</span>`
-                    allText = allText.replace(regex , newElem)
-                })
-
-            }
-        }  else {
-
-            allText = allText.replace( rep.regex , rep.code)
-
-        }
-    })
-
-    setOutputValue(allText)
-
+    let formattedText = handleRegex(e.target.value)
+    setOutputValue(formattedText)
 }
 
 export default Editor

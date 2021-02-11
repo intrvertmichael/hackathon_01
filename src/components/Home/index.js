@@ -2,7 +2,7 @@ import './index.css'
 
 const Home = ({setCurrentPage}) => {
     return (
-        <div className='home nes-container is-dark with-title'>
+        <div className='home nes-container is-dark'>
             <h1>
                 <span className='nes-btn is-warning'>JS</span>
                 <span className='title'>World</span>
