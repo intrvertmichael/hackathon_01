@@ -75,7 +75,10 @@ const Lesson3 = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
                 currentLevel={currentLevel}
 
                 wordLimit={10}
-                checkAnswer={ submitted => checkPokemonArray(submitted)}
+                checkAnswer={ submitted => {
+                    if(!submitted) return false
+                    return checkPokemonArray(submitted)
+                }}
             />
         </>
     )

@@ -10,7 +10,7 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage, wordLimit, check
     const [inputValue, setInputValue] = useState()
     const [outputValue, setOutputValue] = useState()
     const [caretPos, setCaretPos] = useState()
-    const [answerIsCorrect, setAnswerIsCorrect] = useState()
+    const [answerIsCorrect, setAnswerIsCorrect] = useState(null)
     const textInput = useRef(null);
 
     // setting the position of the caret
@@ -106,6 +106,13 @@ const Editor = ({currentLevel, setCurrentLevel, setCurrentPage, wordLimit, check
                 {
                     answerIsCorrect === false?
                     <> Please try again </>
+                    :
+                    ""
+                }
+
+                {
+                    answerIsCorrect === null?
+                    <> Output will appear here </>
                     :
                     ""
                 }

@@ -15,7 +15,7 @@ const Lesson4 = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
             <span className='code'>
                 <span className='variable'>const</span> greeting <span className='function'>{'= () => {'}</span> <br/>
                 &nbsp; &nbsp; <span className='statement'>return</span> <span className='string'>"hello world"</span> <br/>
-                <span className='function'>}</span>
+                <span className='function'>{"}"}</span>
             </span>
 
             <p>
@@ -86,7 +86,10 @@ const Lesson4 = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
                 currentLevel={currentLevel}
 
                 wordLimit={200}
-                checkAnswer={ submitted => checkFavoriteWebsite(submitted) }
+                checkAnswer={ submitted => {
+                    if(!submitted) return false
+                    return checkFavoriteWebsite(submitted)
+                }}
             />
         </>
     )

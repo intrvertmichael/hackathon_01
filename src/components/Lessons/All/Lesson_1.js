@@ -58,7 +58,6 @@ const Lesson1 = ({setCurrentPage, setCurrentLevel, currentLevel, userName, setUs
 
                 wordLimit={50}
                 checkAnswer={ submitted => {
-
                     if(!submitted) return false
 
                     const submittedArray = submitted.split(/\s+/)

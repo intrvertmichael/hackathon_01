@@ -21,7 +21,10 @@ const Lesson5 = ({setCurrentPage, setCurrentLevel, currentLevel}) => {
                 currentLevel={currentLevel}
 
                 wordLimit={200}
-                checkAnswer={ submitted => checkMyFavorites(submitted) }
+                checkAnswer={ submitted => {
+                    if(!submitted) return false
+                    return checkMyFavorites(submitted)
+                }}
             />
         </>
     )

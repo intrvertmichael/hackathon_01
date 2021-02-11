@@ -53,6 +53,7 @@ const Lesson2 = ({setCurrentPage, setCurrentLevel, currentLevel, setUserName}) =
 
                 wordLimit={50}
                 checkAnswer={ submitted => {
+                    if(!submitted) return false
 
                     let submittedArray = submitted.split(/\s+/)
                     submittedArray = submittedArray.filter( word => word !== '')
