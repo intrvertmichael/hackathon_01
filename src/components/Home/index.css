@@ -32,3 +32,16 @@
 .start-button {
     margin: auto;
 }
+
+.coin {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -210px;
+    left: -60px;
+}
+
+.coin-animation {
+    background-image: url('./coin2.gif');
+    background-size: cover;
+}
