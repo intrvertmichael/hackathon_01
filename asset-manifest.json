@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/hackathon_01/static/css/main.a3454085.chunk.css",
-    "main.js": "/hackathon_01/static/js/main.29380777.chunk.js",
-    "main.js.map": "/hackathon_01/static/js/main.29380777.chunk.js.map",
-    "runtime-main.js": "/hackathon_01/static/js/runtime-main.13480ecd.js",
-    "runtime-main.js.map": "/hackathon_01/static/js/runtime-main.13480ecd.js.map",
-    "static/js/2.ec18dba3.chunk.js": "/hackathon_01/static/js/2.ec18dba3.chunk.js",
-    "static/js/2.ec18dba3.chunk.js.map": "/hackathon_01/static/js/2.ec18dba3.chunk.js.map",
-    "static/js/3.7e17f902.chunk.js": "/hackathon_01/static/js/3.7e17f902.chunk.js",
-    "static/js/3.7e17f902.chunk.js.map": "/hackathon_01/static/js/3.7e17f902.chunk.js.map",
-    "index.html": "/hackathon_01/index.html",
-    "static/css/main.a3454085.chunk.css.map": "/hackathon_01/static/css/main.a3454085.chunk.css.map",
-    "static/js/2.ec18dba3.chunk.js.LICENSE.txt": "/hackathon_01/static/js/2.ec18dba3.chunk.js.LICENSE.txt",
-    "static/media/App.css": "/hackathon_01/static/media/clouds.b18b28fd.png",
-    "static/media/index.css": "/hackathon_01/static/media/coin2.4eb6c7ab.gif"
+    "main.css": "/js_world/static/css/main.7d42c564.chunk.css",
+    "main.js": "/js_world/static/js/main.d6932a51.chunk.js",
+    "main.js.map": "/js_world/static/js/main.d6932a51.chunk.js.map",
+    "runtime-main.js": "/js_world/static/js/runtime-main.dfcd205e.js",
+    "runtime-main.js.map": "/js_world/static/js/runtime-main.dfcd205e.js.map",
+    "static/js/2.ec18dba3.chunk.js": "/js_world/static/js/2.ec18dba3.chunk.js",
+    "static/js/2.ec18dba3.chunk.js.map": "/js_world/static/js/2.ec18dba3.chunk.js.map",
+    "static/js/3.7e17f902.chunk.js": "/js_world/static/js/3.7e17f902.chunk.js",
+    "static/js/3.7e17f902.chunk.js.map": "/js_world/static/js/3.7e17f902.chunk.js.map",
+    "index.html": "/js_world/index.html",
+    "static/css/main.7d42c564.chunk.css.map": "/js_world/static/css/main.7d42c564.chunk.css.map",
+    "static/js/2.ec18dba3.chunk.js.LICENSE.txt": "/js_world/static/js/2.ec18dba3.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/js_world/static/media/clouds.b18b28fd.png",
+    "static/media/index.css": "/js_world/static/media/coin2.4eb6c7ab.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.13480ecd.js",
+    "static/js/runtime-main.dfcd205e.js",
     "static/js/2.ec18dba3.chunk.js",
-    "static/css/main.a3454085.chunk.css",
-    "static/js/main.29380777.chunk.js"
+    "static/css/main.7d42c564.chunk.css",
+    "static/js/main.d6932a51.chunk.js"
   ]
 }
