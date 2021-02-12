@@ -1,8 +1,10 @@
 
-import {useRef} from 'react'
+import {useRef, useState} from 'react'
 import './index.css'
 
 const Home = ({setCurrentPage}) => {
+    const [playing, setPlaying] = useState(false)
+    const [timer, setTimer] = useState(false)
 
     const coinDiv = useRef(null)
 
@@ -11,34 +13,35 @@ const Home = ({setCurrentPage}) => {
             <h1>
                 <button className='nes-btn is-warning' onClick={ e => {
 
-                    let animationOn
                     const on = () => {
-                        animationOn = setTimeout( () => {
+
+                        setPlaying(true)
+                        setTimeout( () => {
+                            console.log("animation is on")
                             coinDiv.current.classList.add('coin-animation')
-                        }, 10 )
-                    }
+                        }, 1 )
 
-                    let animationOff
-                    const off = () => {
-                        animationOff = setTimeout( () => {
+                        setTimer(setTimeout( () => {
+                            console.log("animation is off")
                             coinDiv.current.classList.remove('coin-animation')
-                        }, 1000 )
-                    }
+                            setPlaying(false)
+                        }, 1000 ))
 
-                    const clearOn = () => {
-                        clearTimeout(animationOn);
                     }
 
                     const clearOff = () => {
-                        clearTimeout(animationOff);
+
+                        clearTimeout(timer)
+                        coinDiv.current.classList.remove('coin-animation')
+                        on()
+
                     }
 
-                    clearOn()
-                    clearOff()
-
-                    off()
-                    on()
-                    off()
+                    if(playing){
+                        clearOff()
+                    } else {
+                        on()
+                    }
 
                 }}>
                     <div className='coin' ref={coinDiv} />
